@@ -1,13 +1,10 @@
 var Header = React.createClass({
-  onClick: function(e){
-    e.preventDefault();
-     console.log('Location' + e.target.value);
-      $div = $(this.getDOMNode());
-      console.log($div);
-      var value = $(this).attr('ref');
-      console.log(value);
+  onClick: function(target, e){
+      e.preventDefault();
+      var element_to_scroll_to = document.getElementById(target);
+      element_to_scroll_to.scrollIntoView();
    },
-  render: function() {
+   render: function() {
     return(
       <div className="header nav-header">
         <nav className="navbar navbar-inverse navbar-fixed-top">
@@ -19,14 +16,14 @@ var Header = React.createClass({
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="#contents">
+              <a href='#' className="navbar-brand" onClick={this.onClick.bind(null, 'contents')}>
                 <img alt="TH" src='img/headshot.jpg' className='headshot img-circle' />
               </a>
             </div>
             <div className="collapse navbar-collapse" id="links">
               <ul className="nav navbar-nav">
-                <li><a href="#" data-url='hello' onClick={this.onClick} value='hello' ref='target'>About</a></li>
-                <li><a href="#"  onClick={this.onClick} >Projects</a></li>
+                <li><a href="#"  onClick={this.onClick.bind(null, 'about')}>About</a></li>
+                <li><a href="#"  onClick={this.onClick.bind(null, 'projects')} >Projects</a></li>
               </ul>
               <ul className="nav navbar-nav navbar-right">
                 <li><a href="mailto:TrevorWHall@gmail.com?Subject=from TrevorHall.us">Email Me</a></li>
@@ -45,11 +42,3 @@ React.render(
   <Header />,
   document.getElementById('header')
 );
-
-
-
-
-
-
-
-

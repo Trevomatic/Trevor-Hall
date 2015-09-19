@@ -39,13 +39,11 @@ var Projects = React.createClass({
               </div>
             </div>
           </div>
-           <div className='row footer' id='footer'>
-        
-          <div className="container">
-            <p className="text-right">Copyright &copy; Trevor Hall 2015</p>
+          <div className='row footer' id='footer'>
+            <div className="container">
+              <p className="text-right">Copyright &copy; Trevor Hall 2015</p>
+            </div>
           </div>
-          
-      </div>
         </div>
       </div>
     );

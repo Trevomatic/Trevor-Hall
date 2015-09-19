@@ -22,6 +22,11 @@ var About = React.createClass({
 });
 
 var Services = React.createClass({
+  onClick: function(target, e){
+    e.preventDefault();
+    var element_to_scroll_to = document.getElementById(target);
+    element_to_scroll_to.scrollIntoView();
+  },
   render: function() {
     return(
       <div id="services" className="services">
@@ -45,7 +50,8 @@ var Services = React.createClass({
               <p>Node.js, Apache, Ubuntu, Amazon EC2, Heroku, Nginex</p>
             </div>
           </div>
-          <p className='text-center'><a href="#projects" className="btn btn-default btn-lg">Projects</a></p>
+          <p className='text-center'><a href="#" className="btn btn-default btn-lg" onClick={this.onClick.bind(null, 'projects')} >MY PROJECTS
+          </a></p>
         </div>
       </div>
     );
