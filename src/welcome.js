@@ -21,7 +21,6 @@ var Home = React.createClass({
           <h1><b>Trevor Hall</b></h1>
           <h3>Full-Stack Web Developer</h3>
           <a href="#about" className="btn btn-default btn-lg">About Me</a>
-          <button className='fuck'>Button</button>
         </div>
 
       </div>
